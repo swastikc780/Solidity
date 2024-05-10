@@ -54,7 +54,7 @@ contract ERC20 {
         return _allowances[_spender][_owner];
     }
 
-    function mint(address _owner, uint256 _value) internal virtual {
+    function mint(address _owner, uint256 _value) public virtual {
         require(_owner != address(0), "!za");
 
         _beforeTokenTransfer(address(0), _owner, _value);
@@ -66,7 +66,7 @@ contract ERC20 {
         _afterTokenTransfer(address(0), _owner, _value);
     }
 
-    function burn(address _owner, uint256 _value) internal virtual {
+    function burn(address _owner, uint256 _value) public virtual {
         require(_owner != address(0), "!za");
 
         _beforeTokenTransfer(_owner, address(0), _value);
